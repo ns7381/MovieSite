@@ -1,0 +1,32 @@
+{
+  "name": "movie",
+  "version": "1.0.0",
+  "description": "ning movie",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "connect-mongo": "^0.8.2",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "middleware": "^1.0.0",
+    "moment": "^2.10.6",
+    "mongoose": "^4.1.11",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.0.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ning",
+    "movie"
+  ],
+  "author": "ning",
+  "license": "ISC"
+}

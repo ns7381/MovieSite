@@ -1,0 +1,26 @@
+{
+  "name": "movie",
+  "description": "ning movie",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "ning",
+    "movie"
+  ],
+  "authors": [
+    "ning"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
