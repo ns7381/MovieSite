@@ -2,6 +2,8 @@
  * Created by ning on 2015/10/17.
  */
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema
+var ObjectId = Schema.Types.ObjectId
 
 var MovieSchema = new mongoose.Schema({
     doctor: String,
@@ -12,6 +14,14 @@ var MovieSchema = new mongoose.Schema({
     flash: String,
     poster: String,
     year: String,
+    pv: {
+        type: Number,
+        default: 0
+    },
+    category: {
+        type: ObjectId,
+        ref: 'Category'
+    },
     meta: {
         createAt:{
             type: Date,

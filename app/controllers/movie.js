@@ -122,6 +122,7 @@ exports.save = function(req, res) {
             if (err) {
                 console.log(err)
             }
+            console.log(movie)
             if (categoryId) {
                 Category.findById(categoryId, function(err, category) {
                     category.movies.push(movie._id)

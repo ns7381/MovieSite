@@ -6,6 +6,7 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 var mongoStore = require('connect-mongo')(session);
 var logger = require('morgan');
+var serveStatic = require('serve-static');
 var port = 3000
 var app = express()
 var fs = require('fs')
@@ -38,7 +39,7 @@ app.set('view engine', 'jade')
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(serveStatic(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'ning',
     store: new mongoStore({

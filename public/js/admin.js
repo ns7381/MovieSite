@@ -18,4 +18,27 @@ $(function () {
             }
         });
     });
+    $('#douban').blur(function () {
+        var douban = $(this)
+        var id = douban.val()
+
+        if (id) {
+            $.ajax({
+                url: 'https://api.douban.com/v2/movie/subject/' + id,
+                cache: true,
+                type: 'get',
+                dataType: 'jsonp',
+                crossDomain: true,
+                jsonp: 'callback',
+                success: function (data) {
+                    $('#title').val(data.title)
+                    $('#doctor').val(data.directors[0].name)
+                    $('#country').val(data.countries[0])
+                    $('#poster').val(data.images.large)
+                    $('#year').val(data.year)
+                    $('#summary').val(data.summary)
+                }
+            })
+        }
+    })
 });

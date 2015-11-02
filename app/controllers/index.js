@@ -6,15 +6,15 @@ var Movie = mongoose.model('Movie')
 var Category = mongoose.model('Category')
 
 // index page
-exports.index = function(req, res) {
+exports.index = function (req, res) {
     Category
         .find({})
         .populate({
             path: 'movies',
             select: 'title poster',
-            options: { limit: 6 }
+            options: {limit: 6}
         })
-        .exec(function(err, categories) {
+        .exec(function (err, categories) {
             if (err) {
                 console.log(err)
             }
@@ -27,7 +27,7 @@ exports.index = function(req, res) {
 }
 
 // search page
-exports.search = function(req, res) {
+exports.search = function (req, res) {
     var catId = req.query.cat
     var q = req.query.q
     var page = parseInt(req.query.p, 10) || 0
@@ -41,7 +41,7 @@ exports.search = function(req, res) {
                 path: 'movies',
                 select: 'title poster'
             })
-            .exec(function(err, categories) {
+            .exec(function (err, categories) {
                 if (err) {
                     console.log(err)
                 }
@@ -62,7 +62,7 @@ exports.search = function(req, res) {
     else {
         Movie
             .find({title: new RegExp(q + '.*', 'i')})
-            .exec(function(err, movies) {
+            .exec(function (err, movies) {
                 if (err) {
                     console.log(err)
                 }
